@@ -5,8 +5,8 @@ import zipfile
 from PyPDF2 import PdfReader, PdfWriter
 import fitz  # PyMuPDF
 
-# Configuración
-st.set_page_config(page_title="Convertidor Total Free DMC", layout="centered")
+# Configuración general
+st.set_page_config(page_title="ConvertDMC", layout="centered")
 
 # Logo animado tipo texto
 st.markdown("""
@@ -40,10 +40,11 @@ st.markdown("""
 - TIF a PDF (multipágina)
 - TIF a JPG
 - PDF a TIF (multipágina)
-- Separar PDF
+- Separar PDF (cada página como archivo individual)
 - ZIP de imágenes a PDF
 """)
 
+# Menú de selección
 option = st.selectbox("Selecciona una operación:", [
     "JPG a TIF",
     "TIF a PDF",
@@ -146,16 +147,30 @@ st.markdown(f"📊 **Conversiones realizadas en esta sesión:** {st.session_stat
 # Pie de página + Ko-fi
 st.markdown("---")
 st.markdown("🌐 Desarrollado por Daniel Chumbipuma - **ConvertDMC**")
-st.markdown("☕ ¿Te ayudó esta herramienta? Apóyame con un café:")
 
 st.markdown("""
+<style>
+.kofi-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(90deg, #ff5f5f, #ffb347);
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.kofi-button:hover {
+    background: linear-gradient(90deg, #ff7676, #ffd080);
+    transform: scale(1.05);
+}
+</style>
+
 <div align="center">
-  <a href="https://ko-fi.com/danielmarcoschumbipumacabrejos" target="_blank">
-    <img src="https://storage.ko-fi.com/cdn/kofi_button.png" 
-         alt="Invítame un café en ko-fi.com" 
-         height="45" style="border:0px;" />
+  <a href="https://ko-fi.com/danielmarcoschumbipumacabrejos" target="_blank" class="kofi-button">
+    ☕ Apóyame con un café en Ko-fi
   </a>
 </div>
 """, unsafe_allow_html=True)
-
-
