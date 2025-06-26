@@ -5,21 +5,45 @@ import zipfile
 from PyPDF2 import PdfReader, PdfWriter
 import fitz  # PyMuPDF
 
-# Configuración de la app
-st.set_page_config(page_title="ConvertDMC", layout="centered")
-st.title("🌀 ConvertDMC - Convertidor de Imágenes y PDFs")
+# Configuración
+st.set_page_config(page_title="Convertidor Total Free DMC", layout="centered")
+
+# Logo animado tipo texto
+st.markdown("""
+<style>
+.convert-logo {
+  font-size: 38px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  animation: pulse 2s infinite;
+  margin-bottom: 0;
+}
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.85; }
+  100% { transform: scale(1); opacity: 1; }
+}
+</style>
+
+<div class="convert-logo">🌀 ConvertDMC</div>
+""", unsafe_allow_html=True)
+
+st.title("Convertidor de Imágenes y PDFs")
 
 st.markdown("""
 **Funciones disponibles:**
 - JPG a TIF
-- TIF a PDF (incluye multipágina)
+- TIF a PDF (multipágina)
 - TIF a JPG
 - PDF a TIF (multipágina)
-- Separar PDF (extra cada página como archivo PDF)
-- ZIP de Imágenes a PDF
+- Separar PDF
+- ZIP de imágenes a PDF
 """)
 
-# Selector de operación
 option = st.selectbox("Selecciona una operación:", [
     "JPG a TIF",
     "TIF a PDF",
