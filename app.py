@@ -72,3 +72,22 @@ elif option == "Separar PDF":
 
 st.markdown("---")
 st.markdown("🌐 Desarrollado por Daniel Chumbipuma - **ConvertDMC**")
+st.markdown("---")
+st.markdown("☕ If this tool helped you, you can support me here:")
+
+st.markdown("---")
+st.markdown("☕ If this tool helped you, you can support me here:")
+
+st.markdown("---")
+st.markdown("☕ ¿Te ayudó esta herramienta? Apóyame con un café:")
+
+st.markdown("""
+<div align="center">
+  <a href="https://ko-fi.com/danielmarcoschumbipumacabrejos" target="_blank">
+    <img src="https://storage.ko-fi.com/cdn/kofi_button.png" 
+         alt="Invítame un café en ko-fi.com" 
+         height="45" style="border:0px;" />
+  </a>
+</div>
+""", unsafe_allow_html=True)
+
